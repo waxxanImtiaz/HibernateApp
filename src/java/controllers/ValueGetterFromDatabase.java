@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import beans.EmployeeLogin;
+import beans.*;
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
 import java.util.*;
@@ -20,12 +20,19 @@ public class ValueGetterFromDatabase {
         SessionFactory sf = c.buildSessionFactory();
         Session ses = sf.openSession();
 
-        Criteria cr = ses.createCriteria(EmployeeLogin.class);
-        cr.add(Restrictions.eq("id", 2));
-        List<EmployeeLogin> results = cr.list();
+//        Criteria cr = ses.createCriteria(EmployeeLogin.class);
+//        cr.add(Restrictions.eq("id", 2));
+//        List<EmployeeLogin> results = cr.list();
+//
+//        EmployeeLogin l = results.get(0);
+//        System.out.println(l.getUsername());
+        ArrayList<String> list1 = new ArrayList<String>();
+        list1.add("java is a programming language");
+        list1.add("java is a platform");
 
-        EmployeeLogin l = results.get(0);
-        System.out.println(l.getUsername());
+        Question question1 = new Question();
+        question1.setQname("What is Java?");
+        question1.setAnswers(list1);
 
         ses.close();
         sf.close();

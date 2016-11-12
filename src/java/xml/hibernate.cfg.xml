@@ -8,6 +8,7 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">12345</property>
     <property name="hibernate.hbm2ddl.auto">insert</property>
+    <property name="hibernate.cache.use_query_cache">true</property>
     <mapping class="beans.EmployeeLogin"/>  
   </session-factory>
 </hibernate-configuration>
